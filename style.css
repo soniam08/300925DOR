@@ -27,8 +27,14 @@ Unicamente se puede modificar el background
     flex-wrap: wrap;
     gap: 10px; /*Separacion entre bloques */
     justify-content: space-between; /*Mueve el contenido al centro con center, flex start, flex end para las esquinas, space-between*/
-    
-}
+    justify-content: space-around;   
+        /* Jugar con el eje vertical */
+    height:100vh; /*/jugar con la medida de largo, pilla toda la pantalla de referencia*/
+    align-items: center;
+    align-items: baseline;
+    align-items: last baseline;
+    align-content: center;
+    }
 
 .item{
     background-color: blueviolet;
@@ -40,4 +46,19 @@ Unicamente se puede modificar el background
     color: white;
 }
 
-/* Con display: inline-block; podemos colocar el div al lado del contenido anterior */
+.priority{
+    order:-1; /* */
+    background-color: rgb(173, 108, 208);
+}
+
+@media (max-width:768px) { /* A partir de este momento te comportas de otra manera, es como una subcss, antes era para el escritorio y a partir de aqui cambia por ejemplo para una tablet */
+
+    .container{
+        flex-direction: column;
+    }
+    .item{
+        width: 300px;
+        height: max-content; /*Se visualiza ajustandose al máximo tamaño para mostrar todo */
+    }
+
+}
